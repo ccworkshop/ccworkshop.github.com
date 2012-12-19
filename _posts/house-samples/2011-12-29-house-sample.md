@@ -1,7 +1,7 @@
 ---
 layout: post
 category: [category1, category2]
-tags: [細項1, 細項2]
+tags: [細項1, 細項2, 台中市]
 
 
 geo: 24.164906,120.653112
