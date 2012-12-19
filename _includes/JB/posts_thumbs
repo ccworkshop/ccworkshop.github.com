@@ -1,0 +1,30 @@
+
+{% for post in posts_collate  %}
+
+
+    <article data-id="id-{{ forloop.index }}" 
+
+					{% if filtrtype == 'tag'  %}
+				  	data-type="{{ post.tags | join : " " }}"
+				  {% else  %}
+				  	data-type="{{ post.category | join : "_" }}"
+				  {% endif  %}
+				  
+			    class="span6">
+        <span>
+              {% if post.image %}<img src="{{ post.image }}" alt="photo"/>  {% endif %}
+            <div class="pd">
+                <a href="{{ post.image }}" class="p-view"  data-rel="prettyPhoto"></a>
+                <a href="{{ post.url }}" class="p-link"></a>
+            </div>
+        </span>
+        <h3><a href="#">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+        <a href="{{ post.url }}" class="read-more">Read More ...</a>
+    </article>
+
+{% endfor %}
+
+
+{% assign posts_collate = nil %}
+{% assign filtrtype = nil %}
