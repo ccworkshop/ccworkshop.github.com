@@ -1,0 +1,30 @@
+<li class="current all"><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}">全部</a></li>
+
+  {% for post in posts_collate  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+    {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+  
+    {% if forloop.first %}
+    
+      <li class="date_{{this_year}}"><a href="#">{{this_year}}</span></a></li>
+      <li class="date_{{this_year}}_{{this_month}}"><a href="#">{{this_year}}_{{this_month}}</span></a></li>
+
+    {% endif %}
+  
+    {% if forloop.last %}
+    {% else %}
+      {% if this_year != next_year %}
+
+        <li class="date_{{next_year}}"><a href="#">{{next_year}}</span></a></li>
+        <li class="date_{{next_year}}_{{next_month}}"><a href="#">{{next_year}}_{{next_month}}</span></a></li>
+      {% else %}    
+        {% if this_month != next_month %}
+          <li class="date_{{next_year}}_{{next_month}}"><a href="#">{{next_year}}_{{next_month}}</span></a></li>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+{% assign posts_collate = nil %}
