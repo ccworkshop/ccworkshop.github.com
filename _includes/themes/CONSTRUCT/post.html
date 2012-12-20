@@ -3,22 +3,7 @@
 </div>
 
 
-<div class="modal hide" id="mapModal">
-    <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">Close</button>
-  </div>
-    <div class="modal-body">
-    <iframe width="520" height="390" src="http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q={{ page.address }}&z=14&output=embed&t=m"></iframe>
-  </div>
-</div>
-<div class="modal hide" id="streetModal">
-    <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">Close</button>
-  </div>
-    <div class="modal-body">
-    <iframe width="520" height="390" src="http://maps.google.com/maps/sv?&geocode=&q={{ page.address }}&panoid=3JSlKWi6Pdvsuzbp5c3IRA&v=1&gl=&hl=zh-TW"></iframe>
-  </div>
-</div>
+
 <div class="row">
   <div class="span5">
     <h3>{{ page.spec }}</h3>
@@ -35,8 +20,15 @@
 <div class="row">
   <div class="span8">
 
+    <iframe width="98%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?oe=UTF-8&amp;q=google+maps+malmo&amp;ie=UTF8&amp;hq=&amp;hnear={{ page.address }}&amp;t=m&amp;ll={{ page.geo }}&amp;spn=0.01697,0.068665&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+
+    <hr />
+        
+
+
 
     <section class="da-thumbs portfolio">
+
 
       {% assign img = page.img %}  
       {% include JB/imgs_thumbs %}
@@ -88,17 +80,7 @@
   
   <div class="span4">
 
-    <div id="row property_map"  class="center">
-      <a href="#mapModal"><img src="http://maps.google.com/staticmap?center={{ page.geo }}&amp;zoom=15&amp;size=250x250&amp;maptype=mobile&amp;markers={{ page.geo }},red&amp;key=ABQIAAAAqQJ-gFBKUbBLaFN1HQF4KBQ_k2Fxd8XZtbWUsvz5Vrarxzf2SRSh7DRXLQmAZ-6XwtrmMhkINGT27A&amp;sensor=false" alt="" /></a>
-      
-      <p>
-        <br /><a data-toggle="modal" href="#mapModal">檢視較大的地圖</a>
-        <br /><a data-toggle="modal" href="#streetModal">檢視街景</a>
-      </p>
 
-     
-    </div>
-    <hr />
 
     <div id="row">
       <h4>發佈於</h4>
