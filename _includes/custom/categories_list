@@ -1,9 +1,11 @@
-<li class="all"><a href="#">全部</a></li>
-{% if categories_list.first[0] == null %}
-  {% for category in categories_list %} 
+<li class="all"><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}">全部</a></li>
 
-    <li class="{{ category | join: "_" }}"><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category| join: "_" }}">{{ category | join: "/" }}-<span>{{ site.categories[category].size }}</span></a></li>
-  {% endfor %}
+{% if categories_list.first[0] == null %}
+
+
+    <li class="{{ categories_list | join: "_" }}"><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ categories_list| join: "_" }}">{{ categories_list | join: "/" }}</span></a></li>
+
+
 {% else %}
   {% for category in categories_list %} 
 
