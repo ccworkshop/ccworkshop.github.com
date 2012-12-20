@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [category1, category2]
+category: [分類1, category2]
 tags: [細項1, 細項2, 台中市]
 
 
