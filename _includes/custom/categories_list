@@ -13,3 +13,16 @@
 {% endif %}
 
 {% assign categories_list = nil %}
+
+
+<script type="text/javascript" >
+$(function() { 
+	var currTagName=window.location.hash.replace("#","");
+	if(currTagName=="")currTagName="all";
+
+	var currTag=$('.'+currTagName+" a");
+	currTag.click();
+});
+
+
+</script>

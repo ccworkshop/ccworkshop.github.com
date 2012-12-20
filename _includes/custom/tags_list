@@ -1,5 +1,5 @@
 
-<li class="all"><a href="#">全部</a></li>
+<li class="all"><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}">全部</a></li>
 
 
 
@@ -14,4 +14,16 @@
   {% endif %}
 
 {% assign tags_list = nil %}
+
+<script type="text/javascript" >
+$(function() { 
+	var currTagName=window.location.hash.replace("#","");
+	if(currTagName=="")currTagName="all";
+
+	var currTag=$('.'+currTagName+" a");
+	currTag.click();
+});
+
+
+</script>
 

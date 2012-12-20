@@ -8,22 +8,21 @@ weight: 4
 {% include JB/setup %}
 
 <!--container-->
-<section id="container">
-    <div class="container">
-        <!--filter-->
-        <ul id="filtrable">
-  {% assign tags_list = site.tags %}  
-  {% include JB/tags_list %}
-        </ul>
 
-        <div class="clear"></div>
-        
-        <section class="row da-thumbs portfolio filtrable">
-			{% assign posts_collate = site.posts %}
-            {% assign filtrtype = "tag" %}
-			{% include JB/posts_thumbs %}
+<div class="container">
+    <!--filter-->
+    <ul id="filtrable">
+        {% assign tags_list = site.tags %}  
+        {% include JB/tags_list %}
+    </ul>
 
-        </section>
-    </div>
-</section>
+    <div class="clear"></div>
+    
+    <section class="row da-thumbs portfolio filtrable">
+		{% assign posts_collate = site.posts %}
+        {% assign filtrtype = "tag" %}
+		{% include JB/posts_thumbs %}
 
+    </section>
+</div>
+    

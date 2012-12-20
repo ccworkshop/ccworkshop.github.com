@@ -54,10 +54,13 @@
 
 <section class="message-top">
     <div>
-    <button type="button" class="close" data-dismiss="alert">×</button>
-            <div class="notification container">
-
-            <strong>Hey!</strong> This may be your important marketing notification ;-).
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <div class="notification container">
+            {% if page.alert %}
+            <strong>{{page.alert}}</strong>
+            {% else %}
+            <strong>Hey! 歡迎來到我的房仲網，手機觀看也OK喔！</strong>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -103,43 +106,21 @@
 <footer id="footer">
     <div class="container">
     <div class="row">
-        <div class="span4">
-            <h3>通知</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue.</p>
-            <p>Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst. Curabitur condimentum justo sed urna porttitor aliquam.</p>
-        </div>
 
         <div class="span4">
-            <h3>寫信給我</h3>
-            <form id="contact" class="form-horizontal" method="post">
-                <div class="control-group">
-                    <label class="control-label" for="inputName">Name</label>
-                    <div class="controls">
-                        <input type="text" id="inputName" placeholder="Name" name="inputName">
-                        <label class="ferror" for="inputName" id="fname_error">Name is required.</label>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputEmail">Email</label>
-                    <div class="controls">
-                        <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
-                        <label class="ferror" for="inputEmail" id="femail_error">Email is required.</label>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputMessage"></label>
-                    <div class="controls">
-                        <textarea rows="3" id="inputMessage" name="inputMessage"></textarea>
-                        <label class="ferror" for="inputMessage" id="fmessage_error">Message is required.</label>
-                    </div>
-                </div>
-                <div class="submit-div">
-                    <input type="submit" class="btn pull-right form-button" value="SUBMIT!">
-                </div>
-            </form>
+            <h3>留言給我</h3>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=144361232326542";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-comments" data-href="{{ site.production_url }}" data-width="320" data-num-posts="5"></div>
         </div>
         <div class="span4">
-            <h3>聯絡方式</h3>
+            <h3>聯絡我</h3>
             <address>
                 Companyname inc.<br>
                 London,  Baker Street, 90210<br>
@@ -148,6 +129,11 @@
             </address>
             Ut eu nulla eget massa blandit eleifend vel sedis lacus. Sed at viverra nulla. Fusce vel adipisci odio. Phasellus commodo, mauris eget pharetra scelerisque, est justo lacinia tortor.
         </div>
+
+        <div class="span4">
+          <h3>最近留言</h3>
+          <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/{{ site.JB.comments.disqus.short_name }}/recent_comments_widget.js?hide_avatars=1"></script></div>
+        </section>
     </div>
     </div>
 </footer>
@@ -165,7 +151,7 @@
             </div>
             <p class="span4">
 
-              <span class="pull-right">&copy; 2012 | <a href="about.html">Twitter Bootstrap</a> | <a href="http://smlsun.com/">Power by smlsun</a>.</span>
+              <span class="pull-right">&copy; 2012 | <a href="http://smlsun.com/">smlsun</a>＠<a href="http://ccws.co/">野碼軟體</a> 作品.</span>
             </p>
         </div>
     </div>

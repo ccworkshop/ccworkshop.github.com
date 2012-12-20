@@ -12,13 +12,13 @@
 				  
 			    class="span6">
         <span>
-              {% if post.image %}<img src="{{ post.image }}" alt="photo"/>  {% endif %}
+              {% if post.img %}<img src="{{ post.img }}" alt="photo"/>  {% endif %}
             <div class="pd">
-                <a href="{{ post.image }}" class="p-view"  data-rel="prettyPhoto"></a>
-                <a href="{{ post.url }}" class="p-link"></a>
+                <a href="{{ post.img }}" class="p-view hidden-phone"  data-rel="prettyPhoto"></a>
+                <a href="{{ post.url }}" class="p-link hidden-phone"></a>
             </div>
         </span>
-        <h3><a href="#">{{ post.title }}</a></h3>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
         <p>{{ post.description }}</p>
         <a href="{{ post.url }}" class="read-more">Read More ...</a>
     </article>

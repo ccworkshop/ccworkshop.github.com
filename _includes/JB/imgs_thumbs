@@ -1,0 +1,9 @@
+    {% if img  %}
+      <article>
+        <img src="{{ img }}" alt="photo"/>
+        <div>
+          <a href="{{ img }}" class="p-view"  data-rel="prettyPhoto"></a>
+        </div>
+      </article>
+    {% endif %} 
+    {{ assign img =nil }}

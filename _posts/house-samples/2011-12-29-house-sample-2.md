@@ -8,13 +8,8 @@ geo: 24.164906,120.653112
 address: 地址2
 price: 價格2
 
-image: https://lh4.googleusercontent.com/-8eLIW1_j-VI/UMBQ3tMheKI/AAAAAAAALXA/47NPS7WZzq8/s912/DSC_4011.JPG # 主要顯示的圖片
+img: https://lh4.googleusercontent.com/-8eLIW1_j-VI/UMBQ3tMheKI/AAAAAAAALXA/47NPS7WZzq8/s912/DSC_4011.JPG # 主要顯示的圖片
 
-images: [
-	
-	"https://lh4.googleusercontent.com/-8eLIW1_j-VI/UMBQ3tMheKI/AAAAAAAALXA/47NPS7WZzq8/s912/DSC_4011.JPG"
-	, "https://lh4.googleusercontent.com/-8eLIW1_j-VI/UMBQ3tMheKI/AAAAAAAALXA/47NPS7WZzq8/s912/DSC_4011.JPG"
-]
 
 title: 文章標題2
 subtitle: 子標題2

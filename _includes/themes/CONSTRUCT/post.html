@@ -19,7 +19,6 @@
     <iframe width="520" height="390" src="http://maps.google.com/maps/sv?&geocode=&q={{ page.address }}&panoid=3JSlKWi6Pdvsuzbp5c3IRA&v=1&gl=&hl=zh-TW"></iframe>
   </div>
 </div>
-
 <div class="row">
   <div class="span5">
     <h3>{{ page.spec }}</h3>
@@ -36,26 +35,33 @@
 <div class="row">
   <div class="span8">
 
-    {% if page.image && page.images  %}
+
     <section class="da-thumbs portfolio">
-      {% if page.image  %}
-      <article>
-        <img src="{{ page.image }}" alt="photo"/>
-        <div>
-          <a href="{{ page.image }}" class="p-view"  data-rel="prettyPhoto"></a>
-        </div>
-      </article>
-      {% endif %} 
-      {% for img in page.images %}
-      <article>
-        <img src="{{ img }}" alt="photo"/>
-        <div>
-          <a href="{{ img }}" class="p-view"  data-rel="prettyPhoto"></a>
-        </div>
-      </article>
-      {% endfor %} 
+
+      {% assign img = page.img %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img1 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img2 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img3 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img4 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img5 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img6 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img7 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img8 %}  
+      {% include JB/imgs_thumbs %}
+      {% assign img = page.img9 %}  
+      {% include JB/imgs_thumbs %}
+
+
     </section>
-    {% endif %} 
+
 
 
     {{ content }}
@@ -85,8 +91,8 @@
       <a href="#mapModal"><img src="http://maps.google.com/staticmap?center={{ page.geo }}&amp;zoom=15&amp;size=250x250&amp;maptype=mobile&amp;markers={{ page.geo }},red&amp;key=ABQIAAAAqQJ-gFBKUbBLaFN1HQF4KBQ_k2Fxd8XZtbWUsvz5Vrarxzf2SRSh7DRXLQmAZ-6XwtrmMhkINGT27A&amp;sensor=false" alt="" /></a>
       
       <p>
-        <br /><a data-toggle="modal" href="#mapModal">View larger map</a>
-        <br /><a data-toggle="modal" href="#streetModal">Street view</a>
+        <br /><a data-toggle="modal" href="#mapModal">檢視較大的地圖</a>
+        <br /><a data-toggle="modal" href="#streetModal">檢視街景</a>
       </p>
 
       <hr />
