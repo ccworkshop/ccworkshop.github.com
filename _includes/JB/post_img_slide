@@ -2,10 +2,23 @@
 {% for post in posts_collate  %}
   
   {% if post.img %}
+
     <li>
-        <img src="{{ post.img }}" alt="photo" />
-        <h3><a href="{{ post.url }}"><span>{{ post.title }}</span>{{ post.description }}</a></h3>
-    </li>
+      <div class="work img-polaroid">
+        <div class="work-item">
+          <img src="{{ post.img }}" alt="project 1">                   
+          <div class="work-info">
+            <div class="work-title">{{ post.title }}</div>
+            <div class="work-body">{{ post.description }}</div>
+            <a class="work-link shake" href="{{ post.url }}"><i class="icon-plus"></i>&nbsp;Learn more</a>    
+          </div>
+        </div>
+        <div class="desc">
+          {{ post.title }}   
+        </div>                  
+      </div>
+    </li> 
+
   {% endif %}
 {% endfor %}
 
