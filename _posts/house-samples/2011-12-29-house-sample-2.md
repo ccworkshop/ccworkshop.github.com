@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [category1] # 分類 不可以是中文 
+category: [害1] # 分類 不可以是中文 
 tags: [細項3] # 比如說 房價 樓層 屋齡 總價 幾房
 
 

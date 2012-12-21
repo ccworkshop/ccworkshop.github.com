@@ -107,11 +107,16 @@
     <div class="container">
     <div class="row">
 
-        <div class="span3">
-
-            <p>照片</p>
-            <a href="/comment.html">留言給我</a>
-        </div>
+        <section class="span3">
+          <h3>最近的文章</h3>
+          <ul id="recent_posts">
+            {% for post in site.posts limit: site.recent_posts %}
+              <li>
+                <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
 
         <div class="span3">
             <h3>聯絡我</h3>
