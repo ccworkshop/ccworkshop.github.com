@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [blog] 
+category: [project] 
 tags: [octopress, bootstrap, deck.js, html5]
 
 
