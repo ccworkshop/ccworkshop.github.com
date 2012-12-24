@@ -28,17 +28,8 @@
     <link href="{{ ASSET_PATH }}/css/effects.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/flexslider2/flexslider.css" rel="stylesheet">
-<script>
-function renderDeliciousLinks(items) {
-  var output = "<ul>";
-  for (var i=0,l=items.length; i<l; i++) {
-    output += '<li><a href="' + items[i].u + '" title="Tags: ' + (items[i].t == "" ? "" : items[i].t.join(', ')) + '">' + items[i].d + '</a></li>';
-  }
-  output += "</ul>";
-  $('#delicious').html(output);
-}
 
-</script>
+
 
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -210,8 +201,21 @@ function renderDeliciousLinks(items) {
 
             <h4 class="title"><i class="icon-bookmark"></i>On Delicious</h4>
             <div id="delicious"></div>
-            <script type="text/javascript" src="http://feeds.delicious.com/v2/json/{{ site.delicious_user }}?count={{ site.delicious_count }}&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+
+            <script>
+              function delicious(items) {
+                  var output = "<ul>";
+                  for (var i=0,l=items.length; i<l; i++) {
+                      output += '<li><a href="' + items[i].u + '" title="Tags: ' + items[i].t.join(', ') + '">' + items[i].d + '</a></li>';
+                  }
+                  output += "</ul>";
+                  document.getElementById("delicious").innerHTML=output;
+              }
+            </script>
+            <script type="text/javascript" src="http://feeds.delicious.com/v2/json/{{ site.delicious_user }}?title=&amp;count={{ site.delicious_count }}&amp;sort=date&amp;extended&amp;callback=delicious"></script>
             <p><a href="http://delicious.com/{{ site.delicious_user }}">My Delicious Bookmarks &raquo;</a></p>
+
+
           {% endif %}
 
           <h4 class="title"><i class="icon-comments"></i>Recent Comments</h4>
