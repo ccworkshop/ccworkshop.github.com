@@ -177,42 +177,46 @@
           <div class="margin-bottom-10">
           喜愛研究新的技術，對於軟體開發充滿高度興趣，熟悉JAVA語言，前後端web整合開發技術，以及利用 Jekyll + Bootstrap 進行架站等。
           </div>
-        </div>  
-
-        <div class="span3">
-          <h4 class="title"><i class="icon-comments"></i>Latest From Blog</h4>  
-          <ul id="recent_posts">
-            {% for post in site.posts limit: site.recent_posts %}
-              <li>
-                <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
-              </li>
-            {% endfor %}
-          </ul> 
-        </div>  
-
-        <div class="span3">
           <h4 class="title"><i class="icon-map-marker"></i>Contact</h4>
           <div class="">
 
             <span class="grey-light">Phone:</span>&nbsp;<span>+886 935 177 776</span></br>
             <span class="grey-light">Email:</span>&nbsp;<a href="mailto:{{ site.author.email }}" class="">{{ site.author.email }}</a>
 
-          </div>  
+          </div>
 
 
-          <h4 class="title"><i class="icon-heart"></i>Stay Tuned</h4>
-          <div class="clearfix">
-            <a href="http://plus.google.com/114562460176368030377/posts" class="iconify"><i class="icon-google-plus"></i></a>
-            <a href="http://twitter.com/smlsun" class="iconify"><i class="icon-twitter"></i></a>
-            <a href="http://www.facebook.com/SmlsunCrossCode" class="iconify"><i class="icon-facebook"></i></a>
-            <a href="https://github.com/smlsunxie" class="iconify"><i class="icon-github"></i></a>
+        </div>  
+
+        <div class="span3">
+
+          {% include JB/sharing %}
+  
+
+        </div>  
+
+        <div class="span3">
+
+          <h4 class="title"><i class="icon-comments"></i>Recent Comments</h4>
+          <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/{{ site.JB.comments.disqus.short_name }}/recent_comments_widget.js?hide_avatars=1"></script>
           </div>
         </div>  
 
       <div class="span3">
-        <h4 class="title"><i class="icon-heart"></i>Recent Comments</h4>
-        <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/{{ site.JB.comments.disqus.short_name }}/recent_comments_widget.js?hide_avatars=1"></script>
-        </div>
+
+        <h4 class="title"><i class="icon-book"></i>Latest From Blog</h4>  
+        <ul id="recent_posts">
+          {% for post in site.posts limit: site.recent_posts %}
+            <li>
+              <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul> 
+
+
+
+        <h4 class="title"><i class="icon-qrcode"></i>QR CODE 連結</h4>
+
       </div>                         
           
       </div> <!-- /row-fluid -->
@@ -236,7 +240,7 @@
           </div><!-- /quick-menu -->
 
           <div id="copyright" class="span6 pull-left">
-            &copy; 2012 | <a href="http://smlsun.com/">SMLSUN</a>＠<a href="http://ccws.co/">野碼軟體</a> 作品.
+            &copy; 2012 | <a href="http://smlsun.com/">蹤影</a>＠<a href="http://ccws.co/">野碼軟體</a> 作品.
           </div><!-- /copyright -->
 
         </div>
