@@ -15,5 +15,5 @@
     <iframe src="//www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/SmlsunCrossCode&amp;width=292&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=false&amp;appId=102994276528232" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>
 
 	<h4 class="title"><i class="icon-facebook-sign"></i>Page Like</h4>  
-	<div class="fb-like" data-href="{{site.production_url}}{{page.url}}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div>
+  <div class="fb-like" data-href="{{site.production_url}}{{page.url}}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div>
 
