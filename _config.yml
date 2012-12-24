@@ -11,6 +11,9 @@ pygments: true
 #
 title : Cross Code Workshop
 recent_posts: 5
+# Delicious
+delicious_user: smlsun
+delicious_count: 4
 tagline: 
 author :
   name : Shadow Xie

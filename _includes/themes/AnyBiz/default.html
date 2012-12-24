@@ -196,6 +196,13 @@
         </div>  
 
         <div class="span3">
+          {% if site.delicious_user %}
+
+            <h4 class="title"><i class="icon-bookmark"></i>On Delicious</h4>
+            <div id="delicious"></div>
+            <script type="text/javascript" src="http://feeds.delicious.com/v2/json/{{ site.delicious_user }}?count={{ site.delicious_count }}&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
+            <p><a href="http://delicious.com/{{ site.delicious_user }}">My Delicious Bookmarks &raquo;</a></p>
+          {% endif %}
 
           <h4 class="title"><i class="icon-comments"></i>Recent Comments</h4>
           <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/{{ site.JB.comments.disqus.short_name }}/recent_comments_widget.js?hide_avatars=1"></script>
@@ -215,7 +222,7 @@
 
 
 
-        <h4 class="title"><i class="icon-qrcode"></i>QR CODE 連結</h4>
+        <h4 class="title"><i class="icon-qrcode"></i>QR CODE</h4>
 
       </div>                         
           
