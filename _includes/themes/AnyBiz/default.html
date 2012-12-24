@@ -200,7 +200,7 @@
 
             <h4 class="title"><i class="icon-bookmark"></i>On Delicious</h4>
             <div id="delicious"></div>
-            <script type="text/javascript" src="http://feeds.delicious.com/v2/json/{{ site.delicious_user }}?count={{ site.delicious_count }}&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
+            <script type="text/javascript" src="http://feeds.delicious.com/v2/json/{{ site.delicious_user }}?count={{ site.delicious_count }}&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
             <p><a href="http://delicious.com/{{ site.delicious_user }}">My Delicious Bookmarks &raquo;</a></p>
           {% endif %}
 
@@ -286,17 +286,28 @@
 </html> 
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0]; 
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=391840470897203";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>
+}(document, 'script', 'facebook-jssdk'));
+
 jQuery(document).ready(function() {
     App.initMain();
   App.initGeneral();
 });
+
+function renderDeliciousLinks(items) {
+  var output = "<ul>";
+  for (var i=0,l=items.length; i<l; i++) {
+    output += '<li><a href="' + items[i].u + '" title="Tags: ' + (items[i].t == "" ? "" : items[i].t.join(', ')) + '">' + items[i].d + '</a></li>';
+  }
+  output += "</ul>";
+  $('#delicious').html(output);
+}
 
 </script>
